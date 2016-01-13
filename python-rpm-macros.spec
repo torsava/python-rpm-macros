@@ -67,7 +67,7 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
-* Thu Jan 9 2016 Orion Poplawski <orion@cora.nwra.com> 3-3
+* Thu Jan 7 2016 Orion Poplawski <orion@cora.nwra.com> 3-3
 - Add empty %%prep and %%build
 
 * Mon Jan 4 2016 Orion Poplawski <orion@cora.nwra.com> 3-2
