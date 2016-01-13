@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -26,20 +26,20 @@ Summary:        RPM macros for building Python source packages
 %description -n python-srpm-macros
 RPM macros for building Python source packages.
 
-%package -n python2-macros
+%package -n python2-rpm-macros
 Summary:        RPM macros for building Python 2 packages
 # Would need to be different for each release - worth it?
 #Conflicts:      python2-devel < 2.7.11-3
 
-%description -n python2-macros
+%description -n python2-rpm-macros
 RPM macros for building Python 2 packages.
 
-%package -n python3-macros
+%package -n python3-rpm-macros
 Summary:        RPM macros for building Python 3 packages
 # Would need to be different for each release - worth it?
 #Conflicts:      python3-devel < 3.5.1-3
 
-%description -n python3-macros
+%description -n python3-rpm-macros
 RPM macros for building Python 3 packages.
 
 
@@ -59,14 +59,17 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 %files -n python-srpm-macros
 %{_rpmconfigdir}/macros.d/macros.python-srpm
 
-%files -n python2-macros
+%files -n python2-rpm-macros
 %{_rpmconfigdir}/macros.d/macros.python2
 
-%files -n python3-macros
+%files -n python3-rpm-macros
 %{_rpmconfigdir}/macros.d/macros.python3
 
 
 %changelog
+* Wed Jan 13 2016 Orion Poplawski <orion@cora.nwra.com> 3-4
+- Fix python2/3-rpm-macros package names
+
 * Thu Jan 7 2016 Orion Poplawski <orion@cora.nwra.com> 3-3
 - Add empty %%prep and %%build
 
