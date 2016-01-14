@@ -51,8 +51,3 @@ CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --ski
                 print("not recognized.");\
         end\
 }
-
-# Set to /bin/true to avoid %ifdefs in specfiles
-%__python3_other /bin/true
-%py3_other_build /bin/true
-%py3_other_install /bin/true
