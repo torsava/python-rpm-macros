@@ -48,8 +48,8 @@ CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --ski
                 print(" = ");\
                 print(vr);\
         else\
-                print("ERROR: ");\
+                print("%python_provide: ERROR: ");\
                 print(package);\
-                print("not recognized.");\
+                print(" not recognized.");\
         end\
 }
