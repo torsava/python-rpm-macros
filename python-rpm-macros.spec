@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -52,7 +52,7 @@ mkdir -p %{buildroot}/%{_rpmconfigdir}/macros.d/
 install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
   %{buildroot}/%{_rpmconfigdir}/macros.d/
 
- 
+
 %files
 %{_rpmconfigdir}/macros.d/macros.python
 
@@ -67,6 +67,9 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Thu May 12 2016 Jason L Tibbitts III <tibbs@math.uh.edu> - 3-8
+- Add single-second sleeps to work around setuptools bug.
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 3-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
