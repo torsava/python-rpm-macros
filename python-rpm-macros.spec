@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -10,6 +10,8 @@ Source2:        macros.python2
 Source3:        macros.python3
 
 BuildArch:      noarch
+# For %%python3_pkgversion used in %%python_provide
+Requires:       python-srpm-macros
 Obsoletes:      python-macros < 3
 Provides:       python-macros = %{version}-%{release}
 
@@ -67,6 +69,9 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Fri May 13 2016 Orion Poplawski <orion@cora.nwra.com> 3-9
+- Make python-rpm-macros require python-srpm-macros (bug #1335860)
+
 * Thu May 12 2016 Jason L Tibbitts III <tibbs@math.uh.edu> - 3-8
 - Add single-second sleeps to work around setuptools bug.
 
