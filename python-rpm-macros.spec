@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -69,6 +69,9 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Tue Jul 12 2016 Orion Poplawski <orion@cora.nwra.com> 3-10
+- Do not generate useless Obsoletes with %%{?_isa}
+
 * Fri May 13 2016 Orion Poplawski <orion@cora.nwra.com> 3-9
 - Make python-rpm-macros require python-srpm-macros (bug #1335860)
 
