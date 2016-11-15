@@ -5,8 +5,17 @@
   CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python2} %{py_shbang_opts}" %{?*}
 }
 
+%py_build_egg() %{expand:
+  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} bdist_egg --executable="%{__python2} %{py_shbang_opts}" %{?*}
+}
+
 %py_install() %{expand:
   CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
+}
+
+%py_install_egg() %{expand:
+  mkdir -p %{buildroot}%{python_sitelib}
+  easy_install -m --prefix %{buildroot}%{_prefix} -Z dist/*-py%{python_version}.egg %{?*}
 }
 
 %python_provide() %{lua:
