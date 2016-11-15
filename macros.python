@@ -2,18 +2,18 @@
 %py_shbang_opts -s
 
 %py_build() %{expand:
-  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python2} %{py_shbang_opts}" %{?1}
+  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python2} %{py_shbang_opts}" %{?*}
 }
 
 %py_install() %{expand:
-  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?1}
+  CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
 }
 
 %python_provide() %{lua:
   function string.starts(String,Start)
     return string.sub(String,1,string.len(Start))==Start
   end
-  package = rpm.expand("%{?1:%{1}}")
+  package = rpm.expand("%{?1}")
   vr = rpm.expand("%{?epoch:%{epoch}:}%{version}-%{release}")
   if (string.starts(package, "python2-")) then
     if (rpm.expand("%{?buildarch}") ~= "noarch") then
