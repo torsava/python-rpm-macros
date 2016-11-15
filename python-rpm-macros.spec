@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        11%{?dist}
+Release:        12%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -69,6 +69,11 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Tue Nov 15 2016 Orion Poplawski <orion@cora.nwra.com> 3-12
+- Add %%py_build_egg and %%py_install_egg macros
+- Allow multiple args to %%py_build/install macros
+- Tidy up macro formatting
+
 * Wed Aug 24 2016 Orion Poplawski <orion@cora.nwra.com> 3-11
 - Use %%rpmmacrodir
 
