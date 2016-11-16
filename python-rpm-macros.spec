@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        12%{?dist}
+Release:        13%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -69,6 +69,11 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Wed Nov 16 2016 Orion Poplawski <orion@cora.nwra.com> 3-13
+- Add missing sleeps to other build macros
+- Fix build_egg macros
+- Add %%py_build_wheel and %%py_install_wheel macros
+
 * Tue Nov 15 2016 Orion Poplawski <orion@cora.nwra.com> 3-12
 - Add %%py_build_egg and %%py_install_egg macros
 - Allow multiple args to %%py_build/install macros

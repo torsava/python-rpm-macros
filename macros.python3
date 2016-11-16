@@ -13,7 +13,12 @@
 }
 
 %py3_build_egg() %{expand:
-  CFLAGS="%{optflags}" %{__python3} %{py_setup} %{?py_setup_args} bdist_egg --executable="%{__python3} %{py3_shbang_opts}" %{?*}
+  CFLAGS="%{optflags}" %{__python3} %{py_setup} %{?py_setup_args} bdist_egg %{?*}
+  sleep 1
+}
+
+%py3_build_wheel() %{expand:
+  CFLAGS="%{optflags}" %{__python3} %{py_setup} %{?py_setup_args} bdist_wheel %{?*}
   sleep 1
 }
 
@@ -25,3 +30,6 @@
   mkdir -p %{buildroot}%{python3_sitelib}
   easy_install-%{python3_version} -m --prefix %{buildroot}%{_prefix} -Z dist/*-py%{python3_version}.egg %{?*}
 }
+
+%py3_install_wheel() %{expand:
+  pip%{python3_version} install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot}
