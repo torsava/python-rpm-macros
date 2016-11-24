@@ -70,7 +70,7 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 %changelog
 * Thu Nov 24 2016 Orion Poplawski <orion@cora.nwra.com> 3-15
-- Make expaned macros start on the same line as the macro
+- Make expanded macros start on the same line as the macro
 
 * Wed Nov 16 2016 Orion Poplawski <orion@cora.nwra.com> 3-14
 - Fix %%py3_install_wheel (bug #1395953)
