@@ -1,31 +1,33 @@
 %py_setup setup.py
 %py_shbang_opts -s
 
-%py_build() %{expand:
+# Use the slashes after expand so that the command starts on the same line as
+# the macro
+%py_build() %{expand:\\\
   CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} build --executable="%{__python2} %{py_shbang_opts}" %{?*}
   sleep 1
 }
 
-%py_build_egg() %{expand:
+%py_build_egg() %{expand:\\\
   CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} bdist_egg %{?*}
   sleep 1
 }
 
-%py_build_wheel() %{expand:
+%py_build_wheel() %{expand:\\\
   CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} bdist_wheel %{?*}
   sleep 1
 }
 
-%py_install() %{expand:
+%py_install() %{expand:\\\
   CFLAGS="%{optflags}" %{__python} %{py_setup} %{?py_setup_args} install -O1 --skip-build --root %{buildroot} %{?*}
 }
 
-%py_install_egg() %{expand:
+%py_install_egg() %{expand:\\\
   mkdir -p %{buildroot}%{python_sitelib}
   easy_install -m --prefix %{buildroot}%{_prefix} -Z dist/*-py%{python_version}.egg %{?*}
 }
 
-%py_install_wheel() %{expand:
+%py_install_wheel() %{expand:\\\
   pip install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot}
 }
 
