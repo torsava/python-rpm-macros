@@ -34,5 +34,5 @@
 }
 
 %py3_install_wheel() %{expand:\\\
-  pip%{python3_version} install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot}
+  pip%{python3_version} install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot} --no-deps
 }

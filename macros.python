@@ -28,7 +28,7 @@
 }
 
 %py_install_wheel() %{expand:\\\
-  pip install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot}
+  pip install -I dist/%{1} --root %{buildroot} --strip-file-prefix %{buildroot} --no-deps
 }
 
 %python_provide() %{lua:
