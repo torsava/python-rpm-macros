@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        17%{?dist}
+Release:        18%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -69,6 +69,9 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 3-18
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Mon Jan 23 2017 Michal Cyprian <mcyprian@redhat.com> - 3-17
 - Add --no-deps option to py_install_wheel macros
 
