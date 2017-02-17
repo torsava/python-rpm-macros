@@ -1,6 +1,6 @@
 Name:           python-rpm-macros
 Version:        3
-Release:        18%{?dist}
+Release:        19%{?dist}
 Summary:        The unversioned Python RPM macros
 
 License:        MIT
@@ -69,6 +69,9 @@ install -m 644 %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} \
 
 
 %changelog
+* Fri Feb 17 2017 Michal Cyprian <mcyprian@redhat.com> - 3-19
+- Switch %%__python3 to /usr/libexec/system-python
+
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 3-18
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
